@@ -5,7 +5,7 @@ String packagePath = 'packages/styled_button/assets/';
 class StyledButton extends StatelessWidget {
   final VoidCallback submit;
   final AuthButtonProvider provider;
-  final Color? buttonColor, borderColor;
+  final Color? buttonColor, borderColor, textColor;
   final String? text, customLogoPath;
   final bool disableIcon;
   final bool disableText;
@@ -16,6 +16,9 @@ class StyledButton extends StatelessWidget {
       borderWidth,
       iconSize,
       textSize;
+  final TextStyle? textStyle;
+  final FontWeight? fontWeight;
+  final Gradient? gradient;
 
   const StyledButton({
     super.key,
@@ -34,6 +37,10 @@ class StyledButton extends StatelessWidget {
     this.iconSize,
     this.textSize,
     this.customLogoPath,
+    this.textStyle,
+    this.textColor,
+    this.fontWeight,
+    this.gradient,
   });
 
   @override
@@ -104,11 +111,13 @@ class StyledButton extends StatelessWidget {
                 text ?? '',
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: textSize ?? 18.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                style:
+                    textStyle ??
+                    TextStyle(
+                      color: textColor ?? Colors.black,
+                      fontSize: textSize ?? 18.0,
+                      fontWeight: fontWeight ?? FontWeight.bold,
+                    ),
               ),
             );
 
@@ -119,7 +128,8 @@ class StyledButton extends StatelessWidget {
         width: buttonWidth ?? double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-          color: buttonColor ?? Colors.white,
+          color: gradient == null ? (buttonColor ?? Colors.white) : null,
+          gradient: gradient,
           borderRadius: BorderRadius.circular(borderRadius ?? 10.0),
           border: Border.all(
             color: borderColor ?? Colors.grey,
