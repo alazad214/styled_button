@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class AuthButton extends StatelessWidget {
+String packagePath = 'packages/styled_button/assets/';
+
+class StyledButton extends StatelessWidget {
   final VoidCallback submit;
   final AuthButtonProvider provider;
   final Color? buttonColor, borderColor;
@@ -15,7 +17,7 @@ class AuthButton extends StatelessWidget {
       iconSize,
       textSize;
 
-  const AuthButton({
+  const StyledButton({
     super.key,
     required this.submit,
     required this.provider,
@@ -67,16 +69,26 @@ class AuthButton extends StatelessWidget {
         case AuthButtonProvider.discord:
           logoPath = 'assets/discord.png';
           break;
+        case AuthButtonProvider.phone:
+          logoPath = 'assets/phone.png';
+          break;
       }
     }
 
     final imageWidget =
         disableIcon
             ? const SizedBox.shrink()
+            : customLogoPath != null
+            ? Image.asset(
+              customLogoPath!,
+              height: (iconSize == 34) ? iconSize : 20.0,
+              width: (iconSize == 34) ? iconSize : 20.0,
+            )
             : Image.asset(
               logoPath,
               height: (iconSize == 34) ? iconSize : 20.0,
               width: (iconSize == 34) ? iconSize : 20.0,
+              package: 'styled_button',
             );
 
     final spacing =
@@ -110,7 +122,7 @@ class AuthButton extends StatelessWidget {
           color: buttonColor ?? Colors.white,
           borderRadius: BorderRadius.circular(borderRadius ?? 10.0),
           border: Border.all(
-            color: borderColor ?? Colors.blue,
+            color: borderColor ?? Colors.grey,
             width: borderWidth ?? 1,
           ),
         ),
@@ -137,6 +149,7 @@ enum AuthButtonProvider {
   microsoft,
   instagram,
   discord,
+  phone,
 }
 
 enum IconSide { left, right }
