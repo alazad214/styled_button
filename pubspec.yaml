@@ -1,12 +1,12 @@
 name: styled_button
 description: "A custom styled button"
-version: 0.0.1
+version: 1.0.1
 homepage: https://github.com/alazad214/styled_button
 repository: https://github.com/alazad214/styled_button
 
 
 environment:
-  sdk: ^3.7.2
+  sdk: ">=2.17.0 <4.0.0"
   flutter: ">=1.17.0"
 
 dependencies:

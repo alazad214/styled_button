@@ -37,11 +37,11 @@ import 'package:styled_button/styled_button.dart';
 
 ```dart
 StyledButton(
-  submit: () {
-    print('Google login pressed');
-  },
-  provider: AuthButtonProvider.google,
-  text: 'Continue with Google',
+submit: () {
+print('Google login pressed');
+},
+provider: AuthButtonProvider.google,
+text: 'Continue with Google',
 )
 ```
 
@@ -75,5 +75,16 @@ AuthButtonProvider.microsoft
 AuthButtonProvider.instagram
 AuthButtonProvider.discord
 AuthButtonProvider.phone
+```
+
+## 📂 Example with Custom Icon
+
+```dart
+StyledButton(
+  submit: () => print('Login with phone'),
+  provider: AuthButtonProvider.phone,
+  customLogoPath: 'assets/icon/phone.png',
+  text: 'Login with Phone',
+)
 ```
 
