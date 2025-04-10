@@ -1,7 +1,9 @@
 name: styled_button
 description: "A custom styled button"
 version: 0.0.1
-homepage:
+homepage: https://github.com/alazad214/styled_button
+repository: https://github.com/alazad214/styled_button
+
 
 environment:
   sdk: ^3.7.2
