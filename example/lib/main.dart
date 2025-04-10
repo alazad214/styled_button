@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Styled Button',
       debugShowCheckedModeBanner: false,
-
       home: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(15.0),
@@ -25,24 +24,7 @@ class MyApp extends StatelessWidget {
                 child: StyledButton(
                   text: 'Google',
                   submit: () {},
-                  provider: AuthButtonProvider.phone,
-                  iconSide: IconSide.right,
-                  iconSize: 34,
-                  borderColor: Colors.blue,
-                  borderWidth: 0,
-                  borderRadius: 10,
-                  buttonColor: Colors.white,
-                  textSize: 22,
-                  buttonHeight: 70,
-                  buttonWidth: 200,
-                  disableIcon: false,
-                  disableText: false,
-                  textColor: Colors.red,
-                  gradient: LinearGradient(
-                    colors: [Colors.blue, Colors.purple],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
+                  provider: AuthButtonProvider.google,
                 ),
               ),
             ],

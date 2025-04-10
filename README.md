@@ -1,39 +1,79 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# styled_button
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A customizable Flutter package for creating beautiful, ready-to-use social login buttons with provider icons.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+## 🚀 Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Add this to your `pubspec.yaml`:
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  styled_button: <latest_version>
 ```
 
-## Additional information
+Then run:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```bash
+flutter pub get
+```
+
+### 📂 Add Assets
+
+Make sure to include the assets used by this package:
+
+```yaml
+flutter:
+  assets:
+    - packages/styled_button/assets/
+```
+
+## 📦 Import
+
+```dart
+import 'package:styled_button/styled_button.dart';
+```
+
+## 💡 Usage Example
+
+```dart
+StyledButton(
+  submit: () {
+    print('Google login pressed');
+  },
+  provider: AuthButtonProvider.google,
+  text: 'Continue with Google',
+)
+```
+
+## 🛠 Customization Options
+
+You can customize the button with the following parameters:
+
+- `text`: Text to display
+- `buttonColor`: Background color of the button
+- `textColor`: Color of the text
+- `borderColor`: Border color
+- `borderRadius`: Roundness of the corners
+- `borderWidth`: Thickness of the border
+- `iconSide`: Position of the icon (`IconSide.left` or `IconSide.right`)
+- `customLogoPath`: Use your own icon if needed
+- `iconSize`: Size of the icon
+- `textSize`: Font size of the text
+- `gradient`: Gradient background
+- `textStyle`: Custom `TextStyle`
+
+## 🔌 Supported Providers
+
+```dart
+AuthButtonProvider.google
+AuthButtonProvider.facebook
+AuthButtonProvider.twitter
+AuthButtonProvider.apple
+AuthButtonProvider.github
+AuthButtonProvider.linkedin
+AuthButtonProvider.microsoft
+AuthButtonProvider.instagram
+AuthButtonProvider.discord
+AuthButtonProvider.phone
+```
+
