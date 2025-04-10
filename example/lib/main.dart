@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:styled_button/styled_button.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
                 child: StyledButton(
                   text: 'Google',
                   submit: () {},
-                  provider: AuthButtonProvider.google,
+                  provider: AuthButtonProvider.phone,
+                  iconSide: IconSide.right,
                 ),
               ),
             ],
