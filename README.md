@@ -1,6 +1,7 @@
 # styled_button
 
-A customizable Flutter package for creating beautiful, ready-to-use social login buttons with provider icons.
+A highly customizable Flutter package for creating elegant and reusable social login buttons with built-in icon support for popular authentication providers.
+
 
 ## 🚀 Installation
 
@@ -15,16 +16,6 @@ Then run:
 
 ```bash
 flutter pub get
-```
-
-### 📂 Add Assets
-
-Make sure to include the assets used by this package:
-
-```yaml
-flutter:
-  assets:
-    - packages/styled_button/assets/
 ```
 
 ## 📦 Import
@@ -78,6 +69,16 @@ AuthButtonProvider.phone
 ```
 
 ## 📂 Example with Custom Icon
+
+### 📂 Add Assets
+
+Make sure to include the assets used by this package:
+
+```yaml
+flutter:
+  assets:
+    - assets/icon/phone.png
+```
 
 ```dart
 StyledButton(
